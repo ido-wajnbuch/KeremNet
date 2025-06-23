@@ -1,0 +1,17 @@
+.post
+{
+    border-radius: 2px;
+    border: solid black;
+    height: 360px;
+    width: 360px;
+
+}
+
+#post-metadata
+{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
