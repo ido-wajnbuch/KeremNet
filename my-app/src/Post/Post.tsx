@@ -12,9 +12,9 @@ interface PostProps
 const Post: React.FC<PostProps> = ({ content, author, publishDateTime}) => {
     return (
         <div className="post">
-            <span id='post-content'>{content}</span>
-            <span id='post-metadata'>{author} {publishDateTime.toString().split('GMT')[0]}</span>
-            <Like />
+            <span className='post-content'>{content}</span>
+            <span className='post-metadata'>{author} {publishDateTime.toString().split('GMT')[0]}</span>
+            <span className='social-buttons'><Like/></span>
         </div>
     );
 };
