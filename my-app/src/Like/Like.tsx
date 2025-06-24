@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { AiFillLike} from 'react-icons/ai'; // Example icons
-import './Like.css'; // Assuming you have a CSS file for styling
+
 
 interface LikeProps
 {

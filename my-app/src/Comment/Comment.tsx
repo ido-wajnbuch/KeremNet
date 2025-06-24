@@ -1,7 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
 import { FaComment } from 'react-icons/fa';
-import './Comment.css';
 import Modal from 'react-modal';
 
 interface CommentProps
