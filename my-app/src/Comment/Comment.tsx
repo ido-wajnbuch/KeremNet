@@ -1,26 +1,35 @@
 import React from 'react';
+import { useState } from 'react';
 import { FaComment } from 'react-icons/fa';
+import './Comment.css';
+import Modal from 'react-modal';
 
-const Comment : React.FC = () => {
-    const [openPopup, setOpenPopup] = React.useState(false);
+interface CommentProps
+{
+    comments: string[];
+}
+
+const Comment : React.FC<CommentProps> = ({ comments }) => {
+    const [popup, setPopup] = useState(false);
+
+    const clickOpenPopup = () => {setPopup(true); console.log(popup);};
+    const clickClosePopup = () => {setPopup(false); console.log(popup);};
 
     return(
-        <span className='comment-wrapper'>
-            <button className='comment' style={{background:'none', border:'none'}}
-                onClick={() => setOpenPopup(true)}>
-                <FaComment color="gray"></FaComment>
-            </button>
-            {
-                openPopup &&
-                <div className='comments-popup'>
-                    <div className='comments-popup-inner'>
-                        <button className='close-popup' onClick={() => setOpenPopup(false)}>X</button>
-                        ido
-                    </div>
-                </div>
-            }
-
-        </span>
+        <>
+        <button className='comment post-button' onClick={clickOpenPopup}>
+            <FaComment color="gray"></FaComment>
+        </button>
+        <Modal className='comments-window' isOpen={popup}>
+        <button className='close-comments' onClick={clickClosePopup}>X</button>
+            {comments.map(comment => (
+                   <ul>
+                        <li>{comment}</li>
+                   </ul>
+                ))}
+                
+        </Modal>
+        </>
     );
 }
 

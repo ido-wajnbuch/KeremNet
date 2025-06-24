@@ -1,20 +1,25 @@
 import React, { useState } from 'react';
 import { AiFillLike} from 'react-icons/ai'; // Example icons
+import './Like.css'; // Assuming you have a CSS file for styling
 
-const Like: React.FC = () => {
+interface LikeProps
+{
+    likeCount: number;
+}
+
+const Like: React.FC<LikeProps> = ({ likeCount }) => {
     const [liked, setLiked] = useState(false);
-    const [likeCount, setLikeCount] = useState(0);
+    const [currentLikeCount, setCurrentLikeCount] = useState(likeCount);
 
     const handleClick = () => {
         setLiked(prev => !prev);
-        setLikeCount(prev => prev + (liked ? -1 : 1));
+        setCurrentLikeCount(prev => prev + (liked ? -1 : 1));
     };
 
     return (
-        <button className='like' onClick={handleClick}
-        style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
+        <button className='like post-button' onClick={handleClick}>
             {liked ? <AiFillLike color="blue" /> : <AiFillLike color="gray" />}
-            <span>{likeCount}</span>
+            <span>{currentLikeCount}</span>
         </button>
     );
 }

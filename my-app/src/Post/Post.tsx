@@ -7,19 +7,19 @@ interface PostProps
 {
     content: string;
     author: string;
-    //comment: React.ReactNode; Assuming comment is a React component
+    publishedAt: string;
+    comments: string[];
+    likes: number;
 }
 
-const Post: React.FC<PostProps> = ({ content, author }) => {
-    const publishDateTime = new Date();
+const Post: React.FC<PostProps> = ({ content, author, publishedAt, comments, likes }) => {
     return (
         <div className="post">
             <span className='post-content'>{content}</span>
             <div className='post-inner-container'>
-                <span className='like-button'><Like/></span>
-                <span className='comment-button'><Comment/></span>
-                <span className='information-button'><Information author={author} 
-                publishAt={publishDateTime.toString().split('GMT')[0]}/></span>
+                <Like likeCount={likes}/>
+                <Comment comments={comments}/>
+                <Information author={author} publishAt={publishedAt}/>
             </div>
         </div>
     );

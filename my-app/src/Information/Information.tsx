@@ -8,9 +8,12 @@ interface InformationProps
 }
 
 const Information : React.FC<InformationProps>  = ({author, publishAt}) => {
-    const showInfo = () => {alert(`Author:${author}\nPublished At:${publishAt}`);}
-    return (<button className='information' onClick={showInfo} style={{background:'none', border:'none'}}>
-        <FaInfoCircle color="gray"></FaInfoCircle></button>);
+    const showInfo = () => {alert(`Author: ${author}\nPublished At: ${publishAt}`);}
+    return (
+    <button className='information post-button' onClick={showInfo}>
+        <FaInfoCircle color="gray"></FaInfoCircle>
+    </button>
+    );
 }
 
 export default Information;
