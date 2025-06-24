@@ -11,8 +11,8 @@ interface CommentProps
 const Comment : React.FC<CommentProps> = ({ comments }) => {
     const [popup, setPopup] = useState(false);
 
-    const clickOpenPopup = () => {setPopup(true); console.log(popup);};
-    const clickClosePopup = () => {setPopup(false); console.log(popup);};
+    const clickOpenPopup = () => {setPopup(true);};
+    const clickClosePopup = () => {setPopup(false);};
 
     return(
         <>
