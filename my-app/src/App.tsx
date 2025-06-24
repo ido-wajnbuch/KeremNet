@@ -9,7 +9,7 @@ import './Post/Post.css';
 function App() {
   return (
     <div className="App">
-      <Post content="Hello World!" author="Ido Wajnbuch" publishDateTime={new Date()} />
+      <Post content="Hello World!" author="Ido Wajnbuch"/>
     </div>
   );
 }
