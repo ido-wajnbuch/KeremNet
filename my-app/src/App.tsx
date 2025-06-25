@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import './App.css';
 import Post from './Post/Post';
+import {PostType} from './Post/Post';
 import './Post/Post.css';
 
 
@@ -21,7 +22,7 @@ function App() {
   return (
     <div className="App">
       {
-        posts.map((post:any) => (
+        posts.map((post:PostType) => (
           <Post content={post.content} author={post.author} 
           publishedAt={post.publishedAt} comments={post.comments} likes={post.likes} />
         ))
