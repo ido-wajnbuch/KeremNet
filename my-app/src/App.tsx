@@ -31,7 +31,6 @@ function App() {
       }
       catch(err:any)
       {
-        console.log(typeof err);
         setError(err.message);
       }
       finally
