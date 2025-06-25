@@ -2,23 +2,23 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import Post from './Post/Post';
+import './Post/Post.css';
+
+
+
+
 function App() {
+  const content = "Hello World!";
+  const author = "Ido Wajnbuch";
+  const publishedAt = new Date().toString().split('GMT')[0];
+  const comments = ["comment 1", "good post", "i like it"];
+  const likes = 10;
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Post content={content} author={author} 
+      publishedAt={publishedAt} comments={comments} likes={likes} />
     </div>
   );
 }

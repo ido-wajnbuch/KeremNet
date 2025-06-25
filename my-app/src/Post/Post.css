@@ -1,0 +1,28 @@
+.post
+{
+    border-radius: 25px;
+    border: solid white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    height: 15em;
+    width: 15em;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.post-content
+{
+    height: 90%;
+    width: 100%;
+}
+
+.post-inner-container
+{
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: center;
+    grid-column-gap: 10px;
+}
+
+
