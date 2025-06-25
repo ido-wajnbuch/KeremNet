@@ -1,0 +1,18 @@
+{
+    "posts": [
+        {
+            "content": "hello world",
+            "author": "Ido Wajnbuch",
+            "publishedAt": "25.6.2025",
+            "comments": ["Great post!", "Have a nice day!"],
+            "likes": 10
+        },
+        {
+            "content": "Another post",
+            "author": "Zoey The Zebra",
+            "publishedAt": "25.6.2025",
+            "comments": ["Interesting read!", "I learned something new."],
+            "likes": 2
+        }
+    ]
+}
