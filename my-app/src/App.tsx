@@ -11,13 +11,42 @@ import './Post/Post.css';
 
 
 function App() {
-  const [posts, setPosts] = useState([]);
+  const API_URL = 'http://localhost:3031/posts';
+  const [posts, setPosts] = useState<PostType[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    axios.get('http://localhost:3031/posts')
-    .then((res:any) => setPosts(res.data))
-    .catch((err:any) => console.log(err));
+    const fetchPosts = async () => 
+    {
+      try
+      {
+        const response = await fetch(API_URL);
+        if(!response.ok)
+        {
+          throw new Error("problem with fetching data");
+        }
+        const data : PostType[] = await response.json();
+        setPosts(data);
+      }
+      catch(err:any)
+      {
+        console.log(typeof err);
+        setError(err.message);
+      }
+      finally
+      {
+        setLoading(false);
+      }
+    };
+    fetchPosts();
   }, []);
+
+  if (error)
+  {
+    return <div>Error: {error}</div>;
+  } 
+    
 
   return (
     <div className="App">
