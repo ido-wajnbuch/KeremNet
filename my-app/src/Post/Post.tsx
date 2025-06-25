@@ -12,6 +12,8 @@ interface PostProps
     likes: number;
 }
 
+export type PostType = PostProps;
+
 const Post: React.FC<PostProps> = ({ content, author, publishedAt, comments, likes }) => {
     return (
         <div className="post">
