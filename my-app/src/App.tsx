@@ -6,6 +6,8 @@ import './App.css';
 import Post from './Post/Post';
 import {PostType} from './Post/Post';
 import './Post/Post.css';
+import Sidebar from './Sidebar/Sidebar';
+import './Sidebar/Sidebar.css';
 
 
 
@@ -48,14 +50,18 @@ function App() {
     
 
   return (
-    
-    <div className="App">
+    <div className='App'>
+      <div className='left'>
+        <Sidebar></Sidebar>
+      </div>
+      <div className='right'>
       {
         posts.map((post:PostType) => (
           <Post content={post.content} author={post.author} 
           publishedAt={post.publishedAt} comments={post.comments} likes={post.likes} />
         ))
       }
+      </div>
     </div>
   );
 }
