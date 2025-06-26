@@ -1,0 +1,23 @@
+.sidebar
+{
+    background-color: #2f4050;
+    height: 35em;
+    width: 10em;
+}
+
+.sidebar-list
+{
+    padding: 0;
+}
+
+.sidebar-row
+{
+    height: 2em;
+    color:aliceblue
+}   
+
+.sidebar-row:hover
+{
+    background-color: cadetblue;
+    cursor: pointer;
+}

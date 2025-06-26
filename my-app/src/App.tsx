@@ -2,10 +2,15 @@ import React from 'react';
 import logo from './logo.svg';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+
 import './App.css';
+
 import Post from './Post/Post';
 import {PostType} from './Post/Post';
 import './Post/Post.css';
+
+import Sidebar from './Sidebar/Sidebar';
+import './Sidebar/Sidebar.css';
 
 
 
@@ -48,13 +53,16 @@ function App() {
     
 
   return (
-    <div className="App">
+    <div className='App'>
+      <Sidebar links={[{title:'home', link:'/'},{title:'users', link:'/users'}]}></Sidebar>
+      <div className='posts'>
       {
         posts.map((post:PostType) => (
           <Post content={post.content} author={post.author} 
           publishedAt={post.publishedAt} comments={post.comments} likes={post.likes} />
         ))
       }
+      </div>
     </div>
   );
 }
