@@ -10,12 +10,11 @@ const Sidebar : React.FC<SidebarProps> = ({links}) =>
 {
     return(
     <div className='sidebar'>
-        <ul  className='sidebar-list'>
+        <ul className='sidebar-list'>
             {
                 links.map((val, key) => {
                     return(
-                        <li  className='sidebar-row' key={key} onClick={() => {window.location.pathname = val.link} }>
-                            {""}
+                        <li className='sidebar-row' key={key} onClick={() => {window.location.pathname = val.link} }>
                             <div>{val.title}</div>
                         </li>
                     );
