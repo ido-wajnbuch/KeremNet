@@ -4,3 +4,24 @@
     height: 100%;
     width: 100%;
 }
+
+.sidebar-list
+{
+    height: auto;
+    width: 100%;
+}
+
+.sidebar-list, .row
+{
+    text-align: center;
+    width: auto;
+    height: auto;
+    border: 1px solid black;
+    color:white;
+}
+
+.sidebar-list:hover, .row :hover
+{
+    cursor: pointer;
+    background-color: cadetblue;
+}

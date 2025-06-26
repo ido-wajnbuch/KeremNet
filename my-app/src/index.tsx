@@ -10,6 +10,10 @@ const router = createBrowserRouter([
     path:'/',
     element: <App />,
     errorElement: <div>hi! you reached to page that not found</div>
+  },
+  {
+    path:"/users",
+    element: <div>users</div>
   }
 ]);
 
@@ -18,7 +22,6 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    
     <RouterProvider router={router}></RouterProvider>
   </React.StrictMode>
 );

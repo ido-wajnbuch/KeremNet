@@ -52,7 +52,7 @@ function App() {
   return (
     <div className='App'>
       <div className='left'>
-        <Sidebar></Sidebar>
+        <Sidebar links={[{title:'users', link:'/users'}]}></Sidebar>
       </div>
       <div className='right'>
       {
